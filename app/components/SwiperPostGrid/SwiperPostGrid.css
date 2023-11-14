@@ -1,0 +1,25 @@
+:root {
+	--swiper-logo-content-width-mobile: 160px;
+	--swiper-logo-click-padding: 16px;
+	--swiper-logo-image-height-mobile: 524px;
+}
+
+.post-grid-slider.swiper .swiper-pagination {
+	/* 
+	Top Calc Mobile: Image Height + Top Padding - Click Padding
+	Top Calc Desktop: Top Padding - Click Padding
+	Left Calc Mobile: Image Width + 50% Remaining Width - Content Width (+ Translate 50%)
+	*/
+	@apply -bottom-[calc(var(--swiper-logo-click-padding)/2)] left-1/2 right-0 flex h-fit w-[var(--swiper-logo-content-width-mobile)]  -translate-x-1/2 translate-y-0 transform flex-row xl:hidden;
+}
+.post-grid-slider.swiper .swiper-pagination .swiper-pagination-bullet {
+	@apply mx-[6px] flex h-[var(--swiper-logo-click-padding)] w-full items-center justify-center rounded-none bg-[unset] pt-2 opacity-100;
+}
+.post-grid-slider.swiper .swiper-pagination .swiper-pagination-bullet:after {
+	@apply block h-[1px] w-full bg-navy content-[''];
+}
+.post-grid-slider.swiper
+	.swiper-pagination
+	.swiper-pagination-bullet.swiper-pagination-bullet-active:after {
+	@apply bg-red;
+}

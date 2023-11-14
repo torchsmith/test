@@ -1,0 +1,23 @@
+cache:
+  paths:
+    - node_modules/
+
+build:
+  stage: build
+  script:
+    - source ~/.bashrc
+    - nvm use 18
+    - corepack enable
+    - yarn install --frozen-lockfile
+    - yarn build
+  environment: production
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+deploy:
+  stage: deploy
+  script:
+    - sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_IP "[ -d '/home/$SSH_USER/htdocs/redrocsite.stg.siteservice.net/redroc-nextjs' ] && cd /home/$SSH_USER/htdocs/redrocsite.stg.siteservice.net/redroc-nextjs; [ -d '/home/$SSH_USER/htdocs/redrocsite.stg.siteservice.net/redroc-nextjs' ] && yarn prod:post-pull;"
+  environment: production
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH

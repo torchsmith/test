@@ -1,0 +1,36 @@
+:root {
+	--swiper-logo-click-padding: 16px;
+	--swiper-logo-image-height-mobile: 524px;
+}
+
+.case-study-slider.swiper .swiper-pagination {
+	/* 
+	Top Calc Mobile: Image Height + Top Padding - Click Padding
+	Top Calc Desktop: Top Padding - Click Padding
+	Left Calc Mobile: Image Width + 50% Remaining Width - Content Width (+ Translate 50%)
+	*/
+	@apply bottom-[72px] left-1/2 right-0 top-[80px] flex h-fit max-w-page -translate-x-1/2 transform flex-row justify-center;
+}
+.case-study-slider.swiper .swiper-pagination .swiper-pagination-bullet {
+	@apply mx-[6px] flex h-[var(--swiper-logo-click-padding)] w-fit min-w-[88px] flex-col items-center justify-center rounded-none bg-[unset] pt-2 opacity-100;
+}
+
+.case-study-slider.swiper .swiper-pagination .swiper-pagination-bullet div {
+	@apply max-w-[88px] scale-x-0 whitespace-nowrap px-4 opacity-0 transition-all duration-300 ease-in-out;
+}
+
+.case-study-slider.swiper .swiper-pagination .swiper-pagination-bullet:after {
+	/*Height didn't work here, so swapped to min height */
+	@apply block min-h-[1px] w-full bg-navy content-[''];
+}
+.case-study-slider.swiper
+	.swiper-pagination
+	.swiper-pagination-bullet.swiper-pagination-bullet-active:after {
+	@apply bg-red;
+}
+.case-study-slider.swiper
+	.swiper-pagination
+	.swiper-pagination-bullet.swiper-pagination-bullet-active
+	div {
+	@apply max-w-[unset] scale-x-100 opacity-100;
+}

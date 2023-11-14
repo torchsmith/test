@@ -6,8 +6,6 @@ import Link from 'next/link';
 import { textClasses } from '@/lib/type';
 import { HTMLProps } from 'react';
 import { parseToUsDate } from '@/lib/utilities';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 type CellNewsProps = {
 	className?: string;
@@ -64,10 +62,6 @@ export default function CellNews({
 					)}
 				>
 					{linkDisplay}
-					<FontAwesomeIcon
-						className='h-3 w-4'
-						icon={faUpRightFromSquare}
-					/>
 				</Link>
 			)}
 		</div>

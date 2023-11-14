@@ -3,12 +3,6 @@ import Heading from '@/components/Heading';
 import Image from 'next/image';
 import { twMerge } from 'tailwind-merge';
 import { headerHeight, headerHeightMobile } from '@/lib/constants';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-	faEnvelope,
-	faPhoneFlip,
-	faLocationDot,
-} from '@fortawesome/free-solid-svg-icons';
 import { miscClasses, textClasses } from '@/lib/type';
 import Wysiwyg from '@/components/Wysiwyg';
 import { WP_EMBED__Attachment } from '@/types/WP_EMBED__Attachment';
@@ -32,17 +26,14 @@ export default async function ContactDetails({ acf }: ContactDetailsProps) {
 	const infoList = [
 		{
 			text: acf.email,
-			icon: faEnvelope,
 			color: 'bg-red',
 		},
 		{
 			text: acf.phone,
-			icon: faPhoneFlip,
 			color: 'bg-cyan',
 		},
 		{
 			text: acf.address,
-			icon: faLocationDot,
 			color: 'bg-yellow',
 		},
 	];
@@ -103,14 +94,6 @@ export default async function ContactDetails({ acf }: ContactDetailsProps) {
 										'h-14 w-14 md:h-10 md:w-10'
 									)}
 								>
-									<FontAwesomeIcon
-										icon={info.icon}
-										className={twMerge(
-											'absolute left-1/2 right-0 top-1/2 h-[14px] w-4 -translate-x-1/2 -translate-y-1/2 transform text-white'
-										)}
-										height={14}
-										width={14}
-									/>
 								</div>
 								<div
 									className={twMerge(

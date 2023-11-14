@@ -38,7 +38,7 @@ export default async function SliderLogo({ acf }: SliderLogoProps) {
 		// console.log('SliderLogo setting images from acf', { acf });
 	}
 
-	// console.log('SliderLogo', images.length);
+	console.log('SliderLogo', images.length);
 
 	// if (images.length === 0) {
 	// 	return null;

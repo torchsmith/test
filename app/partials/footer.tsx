@@ -1,9 +1,4 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-	faFacebookF,
-	faInstagram,
-	faLinkedinIn,
-} from '@fortawesome/free-brands-svg-icons';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { twMerge } from 'tailwind-merge';
@@ -69,19 +64,16 @@ const colTwoLinks = [
 
 const socialLinks = [
 	{
-		icon: faFacebookF,
 		hover: 'hover:border-red',
 		text: 'text-red',
 		href: 'https://www.facebook.com/',
 	},
 	{
-		icon: faInstagram,
 		hover: 'hover:border-cyan',
 		text: 'text-cyan',
 		href: 'https://www.instagram.com/',
 	},
 	{
-		icon: faLinkedinIn,
 		hover: 'hover:border-yellow',
 		text: 'text-yellow',
 		href: 'https://www.linkedin.com/',
@@ -185,15 +177,6 @@ export default function Footer({
 							'h-14 w-14 md:h-10 md:w-10'
 						)}
 					>
-						<FontAwesomeIcon
-							icon={link.icon}
-							className={twMerge(
-								'absolute left-1/2 right-0 top-1/2 h-[14px] w-4 -translate-x-1/2 -translate-y-1/2 transform',
-								link.text
-							)}
-							height={14}
-							width={14}
-						/>
 					</Link>
 				))}
 			</div>

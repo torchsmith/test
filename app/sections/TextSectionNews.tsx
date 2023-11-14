@@ -5,8 +5,6 @@ import Section from '@/components/Section';
 import Heading from '@/components/Heading';
 import Link from 'next/link';
 import { Bg } from '@/lib/acfFields';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import Button from '@/components/Button';
 import TextHeadline from '@/components/TextHeadline';
 import { loadPostsEmbed } from '@/api/loadPostsEmbed';
@@ -108,10 +106,6 @@ export default async function TextSectionNews({ acf }: TextSectionNewsProps) {
 														)}
 													>
 														External Link
-														<FontAwesomeIcon
-															className='h-3 w-4'
-															icon={faUpRightFromSquare}
-														/>
 													</Link>
 												</div>
 											)}

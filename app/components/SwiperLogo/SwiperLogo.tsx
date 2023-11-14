@@ -16,7 +16,7 @@ interface SwiperLogoProps {
 function SwiperLogo(props: SwiperLogoProps) {
 	// console.log(JSON.stringify({ props }));
 	const { images } = props;
-	// console.log('SwiperLogo images', images.length);
+	console.log('SwiperLogo images', images.length);
 
 	// if (images.length === 0) {
 	// 	return <div></div>;
